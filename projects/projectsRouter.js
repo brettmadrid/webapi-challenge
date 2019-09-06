@@ -27,9 +27,9 @@ router.post('/', (req, res) => {
 
 router.put('/:id', (req, res) => {
     const { id } = req.params
-    const { product } = req.body
+    const product = req.body
 
-    console.log({ product })
+    console.log(product)
     productsDb.update(id, product).then(pro => {
         res.status(200).json({ pro })
     })
